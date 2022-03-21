@@ -26,12 +26,12 @@
 <br>   
 
 4. **<소켓 닫기>**   
-<ins>closeSocket(소켓)</ins>를 이용해 소켓을 닫음.
+<ins>closeSocket(소켓)</ins>를 이용해 소켓을 닫고, 소켓 리소스를 반환
 
 <br>   
 
 5. **<윈속 종료>**   
-<ins>WSACleanup()</ins>을 이용해 윈속 사용을 종료, 리소스 반환   
+<ins>WSACleanup()</ins>을 이용해 윈속 사용을 종료, 윈속 리소스를 반환   
 
 
 <br><br><br><br>   
