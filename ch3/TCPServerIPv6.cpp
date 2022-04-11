@@ -1,5 +1,7 @@
 // TCP Server IPv6
 
+#pragma comment(lib, "ws2_32")
+
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 #define SERVERPORT 9000
 #define BUFSIZE 512
@@ -90,5 +92,5 @@ int main()
     }   // accept ¸¶¹«¸®
     closesocket(listen_sock);
 
-    //WSACleanup();
+    WSACleanup();
 }
