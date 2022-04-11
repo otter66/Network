@@ -3,7 +3,7 @@
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 #define SERVERPORT 9000
 #define BUFSIZE 512
-//#pragma comment(lib, "ws2_21")
+//#pragma comment(lib, "ws2_32")
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -86,5 +86,5 @@ int main()
     }   // accept 마무리
     closesocket(listen_sock);
 
-    //WSACleanup();
+    WSACleanup();
 }

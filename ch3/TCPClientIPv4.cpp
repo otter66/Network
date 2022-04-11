@@ -1,10 +1,11 @@
 ﻿// TCP Client IPv4
 
+#pragma comment(lib, "ws2_32")
+
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 #define SERVERIP "127.0.0.1"
 #define SERVERPORT 9000
 #define BUFSIZE 512
-//#pragma comment(lib, "ws2_32")
 
 #include <stdlib.h>
 #include <stdio.h>

@@ -1,11 +1,11 @@
 // TCP Client IPv6
 
+#pragma comment(lib, "ws2_32")
+
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
 #define SERVERIP "::1"  // = 0:0:0:0:0:0:0:1
 #define SERVERPORT 9000
 #define BUFSIZE 512
-
-//#pragma comment(lib, "ws2_32")
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -55,7 +55,7 @@ int main() {
     ZeroMemory(&serveraddr, sizeof(serveraddr));
     serveraddr.sin6_family = AF_INET6;
     int addrlen = sizeof(serveraddr);
-    WSAStringToAddress((LPSTR)SERVERIP, AF_INET6, NULL, (SOCKADDR*)&serveraddr, &addrlen);
+    WSAStringToAddress((LPWSTR)SERVERIP, AF_INET6, NULL, (SOCKADDR*)&serveraddr, &addrlen);
     serveraddr.sin6_port = htons(SERVERPORT);
     retval = connect(sock, (SOCKADDR*)&serveraddr, sizeof(serveraddr));
     if (retval == SOCKET_ERROR) err_quit("connect() error");
