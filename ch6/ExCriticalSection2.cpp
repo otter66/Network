@@ -1,3 +1,5 @@
+// 공유변수에서 임계영역을 사용하지 않았을 때 (방법1)
+
 #pragma comment(lib, "ws2_32")
 
 #define MAXCNT 10000000
@@ -44,5 +46,4 @@ int main() {
 	DeleteCriticalSection(&cs);
 
 	printf("g_count = %d\n", g_count);
-
 }
