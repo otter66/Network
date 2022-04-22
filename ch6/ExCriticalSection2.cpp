@@ -1,20 +1,18 @@
-// °øÀ¯º¯¼ö¿¡¼­ ÀÓ°è¿µ¿ªÀ» »ç¿ëÇÏÁö ¾Ê¾ÒÀ» ¶§ (¹æ¹ı1)
-
 #pragma comment(lib, "ws2_32")
 
 #define MAXCNT 10000000
 #include <stdio.h>
 #include <windows.h>
 
-int g_count = 0;		// °øÀ¯ º¯¼ö
-CRITICAL_SECTION cs;	// ÀÓ°è ¿µ¿ª ±¸Á¶Ã¼ º¯¼ö
+int g_count = 0;		// ê³µìœ  ë³€ìˆ˜
+CRITICAL_SECTION cs;	// ì„ê³„ ì˜ì—­ êµ¬ì¡°ì²´ ë³€ìˆ˜
 
 DWORD WINAPI MyThread1(LPVOID arg) {
 	for (int i = 0; i < MAXCNT; i++) {
-		// 2. ÀÓ°è ¿µ¿ª¿¡ µé¾î°¨
+		// 2. ì„ê³„ ì˜ì—­ì— ë“¤ì–´ê°
 		EnterCriticalSection(&cs);
 		g_count += 2;
-		// 3. ÀÓ°è ¿µ¿ª Å»Ãâ
+		// 3. ì„ê³„ ì˜ì—­ íƒˆì¶œ
 		LeaveCriticalSection(&cs);
 	}
 
@@ -33,7 +31,7 @@ DWORD WINAPI MyThread2(LPVOID arg) {
 
 int main() {
 
-	// 1. ÀÓ°è ¿µ¿ª ÃÊ±âÈ­
+	// 1. ì„ê³„ ì˜ì—­ ì´ˆê¸°í™”
 	InitializeCriticalSection(&cs);
 
 	HANDLE hThread[2];
@@ -42,7 +40,7 @@ int main() {
 
 	WaitForMultipleObjects(2, hThread, true, INFINITE);
 
-	// 4. ÀÓ°è ¿µ¿ª »èÁ¦
+	// 4. ì„ê³„ ì˜ì—­ ì‚­ì œ
 	DeleteCriticalSection(&cs);
 
 	printf("g_count = %d\n", g_count);
