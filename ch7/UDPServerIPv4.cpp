@@ -1,4 +1,4 @@
-﻿// UDP Server
+﻿// UDP Server IPv4
 
 #pragma comment(lib, "ws2_32")
 
