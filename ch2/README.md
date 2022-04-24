@@ -55,6 +55,9 @@
     - 통일된 데이터 송수신 기준을 의미함 
     - 네트워크를 통해 데이터를 전송할 때에는 빅 엔디안이 기준   
 
+<br>   
+
+- Big Endian, Little Endia 설명 → [링크](https://www.youtube.com/watch?v=j-UOJbAIfs0)   
 
 <br><br><br><br>   
 
